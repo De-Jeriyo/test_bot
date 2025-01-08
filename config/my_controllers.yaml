@@ -1,27 +1,49 @@
 controller_manager:
   ros__parameters:
-    update_rate: 30
-    use_sim_time: true
-
-    diff_cont:
+    update_rate: 50
+    joint_state_controller:
+      type: joint_state_controller/JointStateController
+      publish_rate: 50
+    diff_drive_controller:
       type: diff_drive_controller/DiffDriveController
+      left_wheel_names: ["left_wheel_joint"]
+      right_wheel_names: ["right_wheel_joint"]
+      wheel_separation: 0.075
+      wheel_radius: 0.0325
+      cmd_vel_timeout: 0.5
+      publish_limited_velocity: true
+      linear.x.has_velocity_limits: true
+      linear.x.max_velocity: 1.0
+      linear.x.min_velocity: -1.0
+      angular.z.has_velocity_limits: true
+      angular.z.max_velocity: 1.0
+      angular.z.min_velocity: -1.0
 
-    joint_broad:
-      type: joint_state_broadcaster/JointStateBroadcaster
 
-diff_cont:
-  ros__parameters:
+# controller_manager:
+#   ros__parameters:
+#     update_rate: 30
+#     use_sim_time: true
 
-    publish_rate: 50.0
+#     diff_cont:
+#       type: diff_drive_controller/DiffDriveController
 
-    base_frame_id: base_link
+#     joint_broad:
+#       type: joint_state_broadcaster/JointStateBroadcaster
 
-    left_wheel_names: ['left_wheel_joint']
-    right_wheel_names: ['right_wheel_joint']
-    wheel_separation: 0.35
-    wheel_radius: 0.05
+# diff_cont:
+#   ros__parameters:
 
-    use_stamped_vel: false
+#     publish_rate: 50.0
+
+#     base_frame_id: base_link
+
+#     left_wheel_names: ['left_wheel_joint']
+#     right_wheel_names: ['right_wheel_joint']
+#     wheel_separation: 0.075
+#     wheel_radius: 0.0325
+
+#     use_stamped_vel: false
 
     # open_loop: false    
 

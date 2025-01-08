@@ -25,7 +25,7 @@
 
     <gazebo>
         <plugin name="gazebo_ros2_control" filename="libgazebo_ros2_control.so">
-            <parameters>$(find slam_bot)/config/my_controllers.yaml</parameters>
+            <parameters>$(find test_bot)/config/my_controllers.yaml</parameters>
         </plugin>
     </gazebo>
 

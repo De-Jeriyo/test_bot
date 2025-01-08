@@ -1,5 +1,5 @@
 cmake_minimum_required(VERSION 3.5)
-project(slam_bot)
+project(test_bot)
 
 # Default to C99
 if(NOT CMAKE_C_STANDARD)
@@ -17,9 +17,21 @@ endif()
 
 # find dependencies
 find_package(ament_cmake REQUIRED)
+find_package(ament_cmake_python REQUIRED)
+find_package(rclcpp REQUIRED)
+find_package(rclpy REQUIRED)
 # uncomment the following section in order to fill in
 # further dependencies manually.
 # find_package(<dependency> REQUIRED)
+
+#Install Py modules
+ament_python_install_package(${PROJECT_NAME})
+
+#Install Py executalbes
+install(PROGRAMS
+  scripts/arduino_bridge.py
+  DESTINATION lib/${PROJECT_NAME}
+)
 
 if(BUILD_TESTING)
   find_package(ament_lint_auto REQUIRED)
@@ -33,7 +45,7 @@ if(BUILD_TESTING)
 endif()
 
 install(
-  DIRECTORY config description launch worlds
+  DIRECTORY config description launch stl worlds
   DESTINATION share/${PROJECT_NAME}
 )
 
