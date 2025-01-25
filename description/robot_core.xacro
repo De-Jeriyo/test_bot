@@ -51,14 +51,15 @@
     <joint name="chassis_joint" type="fixed">
         <parent link="base_link"/>
         <child link="chassis"/>
-        <origin xyz="-0.08 0 0"/>
+        <origin xyz="-0.05 0 0"/>
     </joint>
 
     <link name="chassis">
         <visual>
             <origin xyz="0.08 0 0"/>
             <geometry>
-                <mesh filename="file://$(find test_bot)/meshes/Chassis.stl" scale="0.001 0.001 0.001" />
+                <mesh filename="package://test_bot/meshes/Chassis.stl" scale="0.001 0.001 0.001" />
+                <!-- <mesh filename="file://$(find test_bot)/meshes/Chassis.stl" scale="0.001 0.001 0.001" /> -->
                 <!-- <mesh filename="$(find test_bot)/stl/Chassis.stl" scale="0.001 0.001 0.001" /> -->
             </geometry>
             <material name="black"/>
@@ -100,7 +101,7 @@
             <geometry>
                 <cylinder radius="0.0325" length="0.02"/>
             </geometry>
-            <material name="yellow"/>
+            <material name="blue"/>
         </visual>
 
         <collision>
@@ -115,7 +116,7 @@
     </link>
 
     <gazebo reference="left_wheel">
-        <material>Gazebo/Yellow</material>
+        <material>Gazebo/Blue</material>
     </gazebo>
 
     <!-- RIGHT WHEEL LINK -->
@@ -132,7 +133,7 @@
             <geometry>
                 <cylinder radius="0.0325" length="0.02"/>
             </geometry>
-            <material name="yellow"/>
+            <material name="blue"/>
         </visual>
 
         <collision>
@@ -147,7 +148,7 @@
     </link>
 
     <gazebo reference="right_wheel">
-        <material>Gazebo/Yellow</material>
+        <material>Gazebo/Blue</material>
     </gazebo>
 
     <!-- CASTER WHEEL LINK -->
