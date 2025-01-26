@@ -60,7 +60,7 @@
             <geometry>
                 <mesh filename="package://test_bot/meshes/Chassis.stl" scale="0.001 0.001 0.001" />
                 <!-- <mesh filename="file://$(find test_bot)/meshes/Chassis.stl" scale="0.001 0.001 0.001" /> -->
-                <!-- <mesh filename="$(find test_bot)/stl/Chassis.stl" scale="0.001 0.001 0.001" /> -->
+                <!-- <mesh filename="$(find test_bot)/meshes/Chassis.stl" scale="0.001 0.001 0.001" /> -->
             </geometry>
             <material name="black"/>
         </visual>

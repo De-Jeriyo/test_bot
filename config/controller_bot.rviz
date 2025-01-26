@@ -3,7 +3,8 @@ Panels:
     Help Height: 78
     Name: Displays
     Property Tree Widget:
-      Expanded: ~
+      Expanded:
+        - /TF1
       Splitter Ratio: 0.5
     Tree Height: 375
   - Class: rviz_common/Selection
@@ -23,7 +24,7 @@ Panels:
     Experimental: false
     Name: Time
     SyncMode: 0
-    SyncSource: LaserScan
+    SyncSource: ""
 Visualization Manager:
   Class: ""
   Displays:
@@ -84,17 +85,13 @@ Visualization Manager:
       Frame Timeout: 15
       Frames:
         All Enabled: true
+        base_footprint:
+          Value: true
         base_link:
-          Value: true
-        camera_link:
-          Value: true
-        camera_link_optical:
           Value: true
         caster_wheel:
           Value: true
         chassis:
-          Value: true
-        laser_frame:
           Value: true
         left_wheel:
           Value: true
@@ -102,21 +99,18 @@ Visualization Manager:
           Value: true
         right_wheel:
           Value: true
-      Marker Scale: 1
+      Marker Scale: 0.4000000059604645
       Name: TF
       Show Arrows: true
       Show Axes: true
-      Show Names: false
+      Show Names: true
       Tree:
         odom:
           base_link:
+            base_footprint:
+              {}
             chassis:
-              camera_link:
-                camera_link_optical:
-                  {}
               caster_wheel:
-                {}
-              laser_frame:
                 {}
             left_wheel:
               {}
@@ -142,16 +136,11 @@ Visualization Manager:
         Expand Link Details: false
         Expand Tree: false
         Link Tree Style: Links in Alphabetic Order
+        base_footprint:
+          Alpha: 1
+          Show Axes: false
+          Show Trail: false
         base_link:
-          Alpha: 1
-          Show Axes: false
-          Show Trail: false
-        camera_link:
-          Alpha: 1
-          Show Axes: false
-          Show Trail: false
-          Value: true
-        camera_link_optical:
           Alpha: 1
           Show Axes: false
           Show Trail: false
@@ -161,11 +150,6 @@ Visualization Manager:
           Show Trail: false
           Value: true
         chassis:
-          Alpha: 1
-          Show Axes: false
-          Show Trail: false
-          Value: true
-        laser_frame:
           Alpha: 1
           Show Axes: false
           Show Trail: false
@@ -254,25 +238,25 @@ Visualization Manager:
   Views:
     Current:
       Class: rviz_default_plugins/Orbit
-      Distance: 5.807699203491211
+      Distance: 1.4977564811706543
       Enable Stereo Rendering:
         Stereo Eye Separation: 0.05999999865889549
         Stereo Focal Distance: 1
         Swap Stereo Eyes: false
         Value: false
       Focal Point:
-        X: -0.010806474834680557
-        Y: -0.0937986671924591
-        Z: -0.00292059313505888
+        X: 0.057130541652441025
+        Y: 0.002309254603460431
+        Z: -0.06671475619077682
       Focal Shape Fixed Size: true
       Focal Shape Size: 0.05000000074505806
       Invert Z Axis: false
       Name: Current View
       Near Clip Distance: 0.009999999776482582
-      Pitch: 1.3853977918624878
+      Pitch: 1.4397963285446167
       Target Frame: <Fixed Frame>
       Value: Orbit (rviz)
-      Yaw: 3.1003994941711426
+      Yaw: 3.180399179458618
     Saved: ~
 Window Geometry:
   Camera:

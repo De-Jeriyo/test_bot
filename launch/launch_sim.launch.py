@@ -24,6 +24,12 @@ def generate_launch_description():
                     get_package_share_directory(package_name),'launch','rsp.launch.py'
                 )]), launch_arguments={'use_sim_time': 'true', 'use_ros2_control': 'true'}.items() #
     )
+
+    # joystick = IncludeLaunchDescription(
+    #             PythonLaunchDescriptionSource([os.path.join(
+    #                 get_package_share_directory(package_name),'launch','joystick.launch.py'
+    #             )]), launch_arguments={'use_sim_time': 'true'}.items()
+    # )
     
     twist_mux_params = os.path.join(get_package_share_directory(package_name),'config','twist_mux.yaml')
     twist_mux = Node(
@@ -67,7 +73,8 @@ def generate_launch_description():
 
     # Launch them all!
     return LaunchDescription([
-        rsp,        
+        rsp,
+        # joystick,        
         twist_mux,
         gazebo,
         spawn_entity,
